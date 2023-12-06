@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tiro</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- java script -->
+    <script src="mobs.js" defer></script>
+    <script src="classes.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body onresize="size()">
+    <main>
+        <section id="homePage">
+            <article>
+                <h1>Brasil</h1>
+                <p>“Você está pronto para enfrentar a realidade? Neste jogo, você é um brasileiro que luta contra os problemas sociais do seu país, como a violência, a descriminação, a pobreza e a desigualdade. Você tem apenas a sua coragem e a sua inteligência para se defender. Será que você conseguirá mudar o destino do Brasil? Descubra neste jogo incrível e desafiador</p>
+                <button onclick="play()">JOGAR</button>
+            </article>
+        </section>
+        <section>
+            <article id="life-bar">
+                <picture>
+                    <img src="imagens/jogador/playerLogo.jpg" alt="">
+                </picture>
+                <article id="life">
+                    <div></div>
+                </article>
+            </article>
+            <article>
+                <output id="point">000</output>
+            </article>
+        </section>
+        <section id="gameOver">
+            <h2>Game Over</h2>
+            <table>
+                <tr>
+                    <th>Pontuação:</th>
+                    <td id="pontuacao">000</td>
+                </tr>
+                <tr>
+                    <th>Recorde:</th>
+                    <td id="recorde">000</td>
+                </tr>
+                <tr>
+                    <th>Kills:</th>
+                    <td id="kills">000</td>
+                </tr>
+            </table>
+            <article id="refresh">
+                <span onclick="window.location.reload()" class="material-symbols-outlined">
+                    arrow_back
+                </span>
+                <span onclick="reiniciar()" class="material-symbols-outlined">
+                    refresh
+                </span>
+            </article>
+        </section>
+        <canvas></canvas>
+    </main>
+</body>
+</html>
