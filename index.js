@@ -22,28 +22,22 @@ const info = {
 };
 
 // recuperando o recorde
-function recuperarRecord(){
+function recuperarRecord() {
   const storageRecord = localStorage.getItem("info");
 
   if (storageRecord) {
     info.record = JSON.parse(storageRecord);
-    console.log(info.record)
   }
 }
-recuperarRecord()
+recuperarRecord();
 
 const background = new Image();
 background.src = "imagens/elementos/fundo.png";
 
 const audios = {
   musica: [
-    "audios/musicas/Dark Atmosphere to Synth.wav",
-    "audios/musicas/Dystopian.wav",
-    "audios/musicas/Empty Streets.wav",
-    "audios/musicas/Mystery Unsolved.wav",
-    "audios/musicas/Surveillance.wav",
-    "audios/musicas/The Protagonist.wav",
-    "audios/musicas/The Story Continues.wav",
+    "audios/musicas/Capítulo 4 Versículo 3 - Racionais Mcs.wav",
+    "audios/musicas/Diário de um detento - Racionais Mcs.wav",
   ],
   arma: {
     tiro: "audios/audioArmas/tiro/22LR/MP3/22LR Single Isolated MP3.mp3",
@@ -118,15 +112,15 @@ const camera = new Camera({
   },
 });
 
-const monsters = [enemy()];
+const monsters = [enemy(),enemy()];
 
 // cirando imagens
 
-function imagens(tipo,personagem,status){
-  const imageSrc =  `imagens/${tipo}/${personagem}/${status}.png`
-  const sprite = new Image()
-  sprite.src = imageSrc
-  return(sprite)
+function imagens(tipo, personagem, status) {
+  const imageSrc = `imagens/${tipo}/${personagem}/${status}.png`;
+  const sprite = new Image();
+  sprite.src = imageSrc;
+  return sprite;
 }
 //--------------------------------------------- Executando o jogo -----------------------------------
 
@@ -144,16 +138,15 @@ function game() {
     document.querySelector("#gameOver").style.display = "block";
 
     //game over card
-    if (info.point > info.record){
+    if (info.point > info.record) {
       info.record = info.point;
       localStorage.setItem("info", JSON.stringify(info.record));
-    } 
+    }
 
     document.querySelector("#pontuacao").innerHTML = info.point;
     document.querySelector("#recorde").innerHTML = info.record;
     document.querySelector("#kills").innerHTML = info.kills;
 
-  
     return;
   }
 
@@ -169,12 +162,11 @@ function play() {
 
 // reiniciar Jogo
 function reiniciar() {
-
   document.querySelector("#gameOver").style.display = "none";
   info.point = 0;
+  difficulty = 1;
   monsters.splice(0, monsters.length);
   monsters.push(enemy());
-  difficulty = 1;
   player.life = 200;
   player.position.x = mapa.width / 2;
   player.position.y = mapa.height / 2;
@@ -185,8 +177,7 @@ function reiniciar() {
 //--------------------------------------------- musica de fundo --------------------------------------------
 
 function musica() {
-  return
-  const musicRandom = Math.round(Math.random() * audios.musica.length);
+  const musicRandom = Math.floor(Math.random() * audios.musica.length);
   const music = new Audio(audios.musica[musicRandom]);
 
   music.play();
@@ -210,7 +201,8 @@ window.addEventListener("mouseup", () => {
 
 // teclado
 window.addEventListener("keydown", (event) => {
-  switch (event.key) {
+  const key = event.key.toLowerCase();
+  switch (key) {
     case "w":
       player.direction.cima = true;
       break;
@@ -226,7 +218,8 @@ window.addEventListener("keydown", (event) => {
   }
 });
 window.addEventListener("keyup", (event) => {
-  switch (event.key) {
+  const key = event.key.toLowerCase();
+  switch (key) {
     case "w":
       player.direction.cima = false;
       break;
@@ -240,4 +233,5 @@ window.addEventListener("keyup", (event) => {
       player.direction.direita = false;
       break;
   }
+
 });

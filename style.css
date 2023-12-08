@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Titan+One&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'MedievalSharp', cursive;
+    font-family: 'Poppins', sans-serif;
     user-select: none;
 }
 
 body {
+    background-color: #333;
     overflow: hidden;
 }
 
@@ -16,7 +17,7 @@ main {
 }
 
 /* Home Page */
-#homePage{
+#homePage {
     position: absolute;
     top: 0;
     z-index: 1;
@@ -37,15 +38,15 @@ main {
     -webkit-backdrop-filter: invert(90deg);
 }
 
-#homePage article{
+#homePage article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 100px;
     align-items: center;
 
-    width: min(90vw,500px);
-    height: min(90vh,700px);
+    width: min(90vw, 500px);
+    height: min(90vh, 700px);
 
     background-color: #b9d6b4;
 
@@ -56,29 +57,40 @@ main {
 
 }
 
-#homePage article h1{
-    font-size: 3rem;
+#homePage article h1 {
+    color: #f5f5f5;
+    font-family: 'Titan One', sans-serif;
+    font-size: 3.5rem;
     text-transform: uppercase;
+  
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #003304
 }
-#homePage article > p{
+
+#homePage article>p {
     font-size: 1.2rem;
     max-width: 80%;
+    text-align: justify;
 }
-#homePage article button{
-    background-color: #9c0000;
+
+#homePage article button {
+    background-color: #00319c;
 
     color: #f5f5f5;
 
     padding: 10px;
     border-radius: 20px;
 
+
+    font-family: 'Titan One', sans-serif;
     font-size: 2rem;
     text-shadow: 2px 2px 5px black;
 
-    transition: all .5s;
+    transition: all .3s;
 }
-#homePage article button:hover{
-    background-color: #8a0101;
+
+#homePage article button:hover {
+    background-color: #0e0572;
 }
 
 
@@ -141,10 +153,13 @@ picture img {
 }
 
 output#point {
-    position: absolute;
-    top: 20px;
-    right: 20px;
 
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+
+    font-family: 'Titan One', sans-serif;
     font-size: 2rem;
 
     color: white;
@@ -162,48 +177,45 @@ output#point {
     height: min(80vw, 700px);
 
     background-color: #3e404e93;
-    background-image: linear-gradient(45deg,#3d8643,#bdfac2);
+    background-image: linear-gradient(45deg, #3d8643, #bdfac2);
 
-    box-shadow: inset -2px -2px 10px #000000c7,inset 2px 2px 10px #ffffffb4;
+    box-shadow: inset -2px -2px 10px #000000c7, inset 2px 2px 10px #ffffffb4;
 
     border-radius: 20px;
 
     cursor: auto;
 }
 
-#gameOver article{
+#gameOver article {
     width: 100%;
 }
 
 #gameOver h2 {
+    font-family: 'Titan One', sans-serif;
     font-size: 3.5rem;
     text-align: center;
 
     padding: 40px;
-    
+
 }
 
-#gameOver table{
+#gameOver table {
     width: 100%;
     padding: 30px;
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
 }
-#gameOver table th{
+
+#gameOver table th {
     font-weight: normal;
     text-align: start;
 }
-#gameOver table td{
-    text-align: center;
-}
 
-#gameOver output{
-    font-size: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
+#gameOver table td {
     text-align: end;
 }
 
-#refresh{
+#refresh {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +225,8 @@ output#point {
     bottom: 0;
     padding: 50px 0;
 }
-#refresh span{
+
+#refresh span {
     background-color: #1b6832;
     color: #cde7ebd7;
     border-radius: 50%;

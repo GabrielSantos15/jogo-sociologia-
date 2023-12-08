@@ -465,7 +465,6 @@ class Monster {
         monsters.push(enemy());
         difficulty+=.1
       }
-      console.log(mobRandom);
     }
   }
   draw() {
@@ -478,7 +477,7 @@ class Monster {
     ctx.fill();
     ctx.stroke();
 
-    ctx.font = `${20 * difficulty}px arial`;
+    ctx.font = `${fontSize(this.raio, this.dificuldade)}px arial`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillStyle = "#fff";
